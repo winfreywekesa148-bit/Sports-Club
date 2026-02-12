@@ -12,17 +12,83 @@ header{
     justify-content: center;
     padding: 10px;
     font-size: larger;
+    font-weight: 900;
 }
 h1{
     justify-content: center;
+    padding: 10px;
+    font-size: medium;
+    font-weight: 500;
+    border-radius: 45%;
+
 }
 h4{
     color: #E3BAC6;
+    justify-content: center;
+    font-size: medium;
+    font-weight: 300;
+    font-style: italic;
 }
 h6{
-    font-weight: 700;
+    font-weight: 300;
     color:#FDE8E9;
+    font-size: small;
+    letter-spacing: normal;
 }
 label{
     color: #FDE8E9;
+    margin-bottom: 8px;
+    font-size: medium;
+    font-weight: 300;
+}
+.intro{
+    border-radius: 20%;
+    padding: 0px;
+    margin: 0px;
+    text-decoration: wavy;
+
+}
+.btnnxt{
+    background-color: #1F2232;
+    color: #BC9EC1;
+    border: none;
+    padding-left: 50%;
+    cursor: pointer;
+    transition: 0.2s;
+}
+.btnnxt:hover {background-color: black;}
+.back{
+    background-color: #1F2232;
+    color: #BC9EC1;
+    border: none;
+    padding-right: 70%;
+    cursor: pointer;
+    transition: 0.2s;
+}
+.back:hover {background-color: black;}
+.nxt{
+    background-color: #1F2232;
+    color: #BC9EC1;
+    border: none;
+    padding-left: 70%;
+    cursor: pointer;
+    transition: 0.2s;
+}
+.nxt:hover {background-color: black;}
+.form{
+    border:1px dotted #FDE8E9;
+}
+.btnbck{
+    background-color: #1F2232;
+    color: #BC9EC1;
+    border: none;
+    padding-left: 50%;
+    cursor: pointer;
+    transition: 0.2s;
+}
+.btnbck:hover {background-color: black;}
+#toast.show{
+    visibility: visible;
+    opacity: 1;
+    bottom: 50%;
 }
