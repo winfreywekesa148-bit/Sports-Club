@@ -15,7 +15,7 @@ function ScSystem() {
 };
 
 ScSystem.prototype.addMember = function(member) {
-    member.id = this.generateId();
+    member.id = Date.now();
     this.members[member.id] = member;
     this.saveToStorage();
 };
@@ -59,7 +59,7 @@ function showToast() {
     }, 3000);
 };
 
-function handleAddMember() {
+function handleaddMember() {
     const name = document.getElementById(`name`);
     const telno = document.getElementById(`telno`);
     const email = document.getElementById(`email`);
@@ -80,9 +80,44 @@ const toMember = new Member(
 );
 
 app.addMember(toMember);
-
-
 };
+
+function renderMembers() {
+    const display = document.getElementById(`display`);
+    const count = document.getElementById(`count`);
+
+    const array = Object.values(app.members);
+
+    showToast("BELGIL has welcomed a new member ;D");
+
+    display.innerHTML = "";
+
+    array.forEach(member => {
+        const club = document.createElement(`div`);
+        club.className = `member-card`;
+        club.innerHTML = `
+        <div>
+        <span>$(member.name)</span>
+        <p>$(member.grp)</p>
+        <strong>$(member.sports)</strong>
+        </div>
+        <div>
+        <button onclick="handleaddMember()">Submit</button>
+        </div>
+        `;
+        display.append(club);
+    })
+};
+
+function handleCancel(id) {
+    if(confirm("Canceling Membership")) {
+        app.cancelMember(id);
+        renderMembers();
+    }
+}
+
+document.addEventListener(`DOMContentLoaded`, renderMembers);
+
 
 
 
