@@ -87,6 +87,12 @@ label{
     transition: 0.2s;
 }
 .btnbck:hover {background-color: black;}
+#toast{
+    visibility: hidden;
+    text-align: center;
+    position: sticky;
+    opacity: 0;
+}
 #toast.show{
     visibility: visible;
     opacity: 1;
