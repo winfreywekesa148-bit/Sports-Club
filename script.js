@@ -60,5 +60,9 @@ function showToast() {
 };
 
 function handleAddMember() {
-    const nmIn = document.getElementById(``)
-}
+    const nmIn = document.getElementById(`name`);
+    const telIn = document.getElementById(`telno`);
+    const emailIn = document.getElementById(`email`);
+    const grpIn = document.getElementById(`grp`);
+    const sportIn = document.getElementById(`sports`);
+};
