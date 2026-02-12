@@ -20,9 +20,9 @@ ScSystem.prototype.addMember = function(member) {
     this.saveToStorage();
 };
 
-ScSystem.prototype.toggleUpdate = function(id) {
+ScSystem.prototype.toggleUpgrade = function(id) {
     if (this.members[id]) {
-        this.members[id].isUpdated = !this.members[id].isUpdated;
+        this.members[id].isUpgrade = !this.members[id].isUpgrade;
         this.saveToStorage();
     }
 };
@@ -35,3 +35,30 @@ ScSystem.prototype.cancelMember = function(id) {
     }
     return false;
 };
+
+function Member(name, telno, email, group, sports) {
+    this.name = name;
+    this.telno = telno;
+    this.email = email;
+    this.group = group;
+    this.sports = sports;
+    this.isUpgrade = false;
+    this.id = null;
+};
+
+const app = new ScSystem();
+
+const gridDisplay = document.getElementById(`display`);
+
+function showToast() {
+    const toast = document.getElementById("toast");
+    toast.classList.add("show");
+
+    setTimeout(() => {
+        toast.classList.remove("show");
+    }, 3000);
+};
+
+function handleAddMember() {
+    const nmIn = document.getElementById(``)
+}
