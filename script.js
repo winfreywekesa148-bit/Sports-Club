@@ -36,11 +36,11 @@ ScSystem.prototype.cancelMember = function(id) {
     return false;
 };
 
-function Member(name, telno, email, group, sports) {
+function Member(name, telno, email, grp, sports) {
     this.name = name;
     this.telno = telno;
     this.email = email;
-    this.group = group;
+    this.grp = grp;
     this.sports = sports;
     this.isUpgrade = false;
     this.id = null;
@@ -60,9 +60,29 @@ function showToast() {
 };
 
 function handleAddMember() {
-    const nmIn = document.getElementById(`name`);
-    const telIn = document.getElementById(`telno`);
-    const emailIn = document.getElementById(`email`);
-    const grpIn = document.getElementById(`grp`);
-    const sportIn = document.getElementById(`sports`);
+    const name = document.getElementById(`name`);
+    const telno = document.getElementById(`telno`);
+    const email = document.getElementById(`email`);
+    const grp = document.getElementById(`grp`);
+    const sports = document.getElementById(`sports`);
+
+    if (name ==="") {
+    alert("name is required ^-^");
+    return;
 };
+
+const toMember = new Member(
+    name.value,
+    telno.value,
+    email.value, 
+    grp.value,
+    sports.value
+);
+
+app.addMember(toMember);
+
+
+};
+
+
+
