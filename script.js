@@ -45,7 +45,7 @@ function showToast() {
 
     setTimeout(() => {
         toast.classList.remove("show");
-    }, 3000);
+    }, 5000);
 };
 
 function handleAddMember() {
@@ -93,8 +93,8 @@ function renderMembers() {
         <strong>$(member.sports)</strong>
         </div>
         <div>
-        <button onclick="handleaddMember()">Submit</button>
-        <button onclick="handleCancel(${member.id})">Cancel</button>
+        <button onclick="handleAddMember()">Submit</button>
+        <button onclick="handleCancel()">Cancel</button>
         </div>
         `;
         display.append(club);
@@ -119,7 +119,6 @@ document.addEventListener("DOMContentLoaded", function () {
     console.log("Clicked");
   }
 });
-
 
 document.addEventListener(`DOMContentLoaded`, renderMembers);
 
