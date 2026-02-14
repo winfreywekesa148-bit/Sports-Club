@@ -1,5 +1,6 @@
 function ScSystem(){
     this.members = this.loadFromStorage();
+    this.currentId = 5000;
 };
 ScSystem.prototype.saveToStorage = function() {
     localStorage.setItem(`memberFlowData`, JSON.stringify(this.members));
@@ -7,11 +8,6 @@ ScSystem.prototype.saveToStorage = function() {
 ScSystem.prototype.loadFromStorage = function() {
     const savedData = localStorage.getItem(`memberFlowData`);
     return savedData ? JSON.parse(savedData) : {};
-};
-
-function ScSystem() {
-    this.members = {};
-    this.currentId = 5000;
 };
 
 ScSystem.prototype.addMember = function(member) {
@@ -109,12 +105,18 @@ function renderMembers() {
     })
 };
 
+document.addEventListener("DOMContentLoaded", function () {
+  function handleAddMember() {
+    console.log("Clicked");
+  }
+});
+
 function handleCancel(id) {
     if(confirm("Canceling Membership")) {
         app.cancelMember(id);
         renderMembers();
     }
-}
+};
 
 document.addEventListener(`DOMContentLoaded`, renderMembers);
 
