@@ -79,22 +79,19 @@ function renderMembers() {
 
     const array = Object.values(app.members);
 
-    showToast("BELGIL has welcomed a new member ;D");
-
+    
     display.innerHTML = "";
 
     array.forEach(member => {
         const club = document.createElement(`div`);
         club.className = `member-card`;
         club.innerHTML = `
+        <span>${member.name}</span>
+        <p>${member.grp}</p>
+        <strong>${member.sports}</strong>     
         <div>
-        <span>$(member.name)</span>
-        <p>$(member.grp)</p>
-        <strong>$(member.sports)</strong>
-        </div>
-        <div>
-        <button onclick="handleAddMember()">Submit</button>
-        <button onclick="handleCancel()">Cancel</button>
+        <button onclick="handleCancel(${member.id})">Cancel</button>
+        
         </div>
         `;
         display.append(club);
