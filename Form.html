@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SPORTSCLUB</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    
+    <div class="Service">
+        <header>SPORTSCLUB</header>
+        <div class="links">
+        <nav>
+            <ul>
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="About-us.html">ABOUT-US</a></li>
+                <li><a href="Form.html">SERVICE</a></li>
+            </ul>
+        </nav>
+        </div>
+        <h4>Form</h4>
+        <div class="form">
+           <div class="name">
+             <label for="name">Name:</label>
+             <input type="text" id="name" placeholder="e.g. Alice " required>
+           </div>
+           <div class="telno">
+            <label for="telno">Telno:</label>
+            <input type="number" id="telno" placeholder="e.g. 07********">
+           </div>
+           <div>
+            <label for="email">Email:</label>
+            <input type="text" id="email" >
+           </div>
+           <div class="grp">
+            <label for="group">Group:</label>
+            <select name="grp" id="grp">
+                <option value="g1">Community & Family Friendly</option>
+                <option value="g2">Competitive & Team Spirit</option>
+                <option value="g3">Youth/Development Focused</option>
+            </select>
+           </div>
+           <div class="sport">
+            <label for="sports">Sports:</label>
+            <select name="sport" id="sports">
+                <option value="GYM 🏋️‍♂️">GYM 🏋️‍♂️</option>
+                <option value="SWIMMING 🏊‍♂️">SWIMMING 🏊‍♂️</option>
+                <option value="FOOTBALL 🥅">FOOTBALL 🥅</option>
+                <option value="TENNIS 🏸">TENNIS 🏸</option>
+                <option value="BASKETBALL 🏀">BASKETBALL 🏀</option>
+                <option value="HOCKEY 🏑">HOCKEY 🏑</option>
+            </select>
+            <button onclick="handleAddMember()">Submit</button>
+           </div>
+           <div>Member: <span id="count">5000</span></div>
+            <div class="btnbck"><button href="About-Us.html">Back</button></div>        
+        </div>
+
+        <main class="grid" id="display">
+            <div class="check">
+                <h6>check!!</h6>
+            </div>
+           </main>
+    </div>
+
+    <div id="toast">WELCOME TO BELGIL SPORTSCLUB</div>
+    <script src="./script.js"></script>
+</body>
+
