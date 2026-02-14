@@ -51,10 +51,6 @@ A few of the things you can do with Belgil:
 * Apply for Membership
 * Comment on any problem
 
-<p align="center">
-  <img src = "(image.png" width=700>
-</p>
-
 ## Feedback
 
 For any problems in applying or services in the facilities one contact us through gmail or via call
