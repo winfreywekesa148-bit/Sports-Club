@@ -16,13 +16,6 @@ ScSystem.prototype.addMember = function(member) {
     this.saveToStorage();
 };
 
-ScSystem.prototype.toggleUpgrade = function(id) {
-    if (this.members[id]) {
-        this.members[id].isUpgrade = !this.members[id].isUpgrade;
-        this.saveToStorage();
-    }
-};
-
 ScSystem.prototype.cancelMember = function(id) {
     if (this.members[id]) {
         delete this.members[id];
@@ -55,14 +48,14 @@ function showToast() {
     }, 3000);
 };
 
-function handleaddMember() {
+function handleAddMember() {
     const name = document.getElementById(`name`);
     const telno = document.getElementById(`telno`);
     const email = document.getElementById(`email`);
     const grp = document.getElementById(`grp`);
     const sports = document.getElementById(`sports`);
 
-    if (name ==="") {
+    if (name.value.trim() ==="") {
     alert("name is required ^-^");
     return;
 };
@@ -76,6 +69,8 @@ const toMember = new Member(
 );
 
 app.addMember(toMember);
+renderMembers();
+showToast();
 };
 
 function renderMembers() {
@@ -99,6 +94,7 @@ function renderMembers() {
         </div>
         <div>
         <button onclick="handleaddMember()">Submit</button>
+        <button onclick="handleCancel(${member.id})">Cancel</button>
         </div>
         `;
         display.append(club);
@@ -117,6 +113,13 @@ function handleCancel(id) {
         renderMembers();
     }
 };
+
+document.addEventListener("DOMContentLoaded", function () {
+  function handleAddMember() {
+    console.log("Clicked");
+  }
+});
+
 
 document.addEventListener(`DOMContentLoaded`, renderMembers);
 
